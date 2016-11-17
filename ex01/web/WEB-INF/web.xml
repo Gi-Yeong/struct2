@@ -27,5 +27,13 @@
         <servlet-name>addcontroller</servlet-name>
         <url-pattern>/guest/add.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>listcontroller</servlet-name>
+        <servlet-class>com.hb.guest.controller.ListController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listcontroller</servlet-name>
+        <url-pattern>/guest/list.do</url-pattern>
+    </servlet-mapping>
 
 </web-app>
