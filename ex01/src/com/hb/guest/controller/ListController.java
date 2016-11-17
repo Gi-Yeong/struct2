@@ -1,16 +1,19 @@
 package com.hb.guest.controller;
 
-import com.hb.guest.model.GuestDao;
-import com.hb.guest.model.GuestDto;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
 
-//@WebServlet("/guest/list.do")
+import com.hb.guest.model.GuestDao;
+import com.hb.guest.model.GuestDto;
+
+@WebServlet("/guest/list.do")
 public class ListController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
