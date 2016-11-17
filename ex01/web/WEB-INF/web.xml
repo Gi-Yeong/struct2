@@ -19,4 +19,13 @@
         <servlet-name>Ex01</servlet-name>
         <url-pattern>/ex01.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>addcontroller</servlet-name>
+        <servlet-class>com.hb.guest.controller.AddController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addcontroller</servlet-name>
+        <url-pattern>/guest/add.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>
