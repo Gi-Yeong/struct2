@@ -1,6 +1,7 @@
 package com.mvc2.core;
 
 import com.mvc2.controller.*;
+import com.mvc2.model.GuestDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,8 @@ import java.io.IOException;
 
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
+    private static GuestDao dao = new GuestDao();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         try {
@@ -39,13 +42,13 @@ public class DispatcherServlet extends HttpServlet {
         if (srvPath.equals("/")) {
             imp = new IndexController();
         } else if (srvPath.equals("/list.do")) {
-            imp = new ListController();
+            imp = new ListController(dao);
         } else if (srvPath.equals("/add.do")) {
-            imp = new AddController();
+            imp = new AddController(dao);
         } else if (srvPath.equals("/One.do")) {
-            imp = new OneController();
+            imp = new OneController(dao);
         } else if (srvPath.equals("/update.do")) {
-            imp = new UpdateController();
+            imp = new UpdateController(dao);
         }
 
 
