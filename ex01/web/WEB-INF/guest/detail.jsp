@@ -36,8 +36,8 @@
     </div>
     <div class="row">
         <div class="grid12">
-            <a href="./edit.do">수정</a>
-            <a href="./del.do">삭제</a>
+            <a href="./add.do?idx=${bean.sabun}">수정</a>
+            <a href="./del.do?idx=${bean.sabun}">삭제</a>
         </div>
     </div>
 </div>

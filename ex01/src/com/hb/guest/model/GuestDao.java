@@ -79,4 +79,35 @@ public class GuestDao {
 
         return dto;
     }
+
+    public void updateOne(GuestDto dto) throws SQLException {
+        String sql = "UPDATE GUEST SET name = ?, pay = ? WHERE SABUN = ?";
+
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, dto.getName());
+            pstmt.setInt(2, dto.getPay());
+            pstmt.setInt(3, dto.getSabun());
+            pstmt.executeUpdate();
+        } finally {
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        }
+
+    }
+
+    public void deleteOne(int sabun) throws SQLException {
+        String sql = "DELETE FROM PUBLIC.GUEST WHERE SABUN = ?";
+
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, sabun);
+
+        int result = pstmt.executeUpdate();
+
+        if (pstmt != null) pstmt.close();
+        if (conn != null) conn.close();
+        if (result < 1) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
