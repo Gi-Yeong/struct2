@@ -12,7 +12,7 @@
     <style></style>
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link href="${pageContext.request.contextPath}/WEB-INF/css/grid.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/grid.css" rel="stylesheet">
     <title>Insert title here</title>
 </head>
 <body>
@@ -31,14 +31,16 @@
 <p><a href="./add.do">add</a></p>
 <hr/>
 <div class="container">
-    <div class="row">
-        <c:forEach items="${alist }" var="dto">
+    <c:forEach items="${alist }" var="dto">
+    <a href="./detail.do?idx=${dto.sabun}">
+        <div class="row">
             <div class="grid3">${dto.sabun}</div>
             <div class="grid3">${dto.name }</div>
             <div class="grid3">${dto.nalja }</div>
             <div class="grid3">${dto.pay }</div>
-        </c:forEach>
-    </div>
+            </c:forEach>
+        </div>
+    </a>
 </div>
 </body>
 </html>

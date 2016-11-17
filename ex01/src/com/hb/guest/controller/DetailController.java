@@ -27,6 +27,6 @@ public class DetailController extends HttpServlet {
             e.printStackTrace();
         }
 
-        request.getRequestDispatcher("detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/guest/detail.jsp").forward(request, response);
     }
 }
