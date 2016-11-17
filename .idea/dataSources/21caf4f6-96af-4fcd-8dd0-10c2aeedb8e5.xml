@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="H2 - jdbc:h2:tcp://localhost/~/test">
+  <database-model serializer="dbm" rdbms="H2" format-version="2.6">
+    <database id="1" name="TEST">
+      <visible>1</visible>
+    </database>
+    <schema id="2" parent="1" name="INFORMATION_SCHEMA"/>
+    <schema id="3" parent="1" name="PUBLIC">
+      <visible>1</visible>
+    </schema>
+    <table id="4" parent="3" name="GUEST"/>
+    <column id="5" parent="4" name="SABUN">
+      <data-type>DECIMAL(65535,32767)|3</data-type>
+    </column>
+    <column id="6" parent="4" name="NAME">
+      <data-type>VARCHAR(50)|12</data-type>
+    </column>
+    <column id="7" parent="4" name="NALJA">
+      <data-type>DATE(8)|91</data-type>
+    </column>
+    <column id="8" parent="4" name="PAY">
+      <data-type>DECIMAL(65535,32767)|3</data-type>
+    </column>
+  </database-model>
+</dataSource>
